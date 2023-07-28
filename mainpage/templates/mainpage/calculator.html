@@ -1,0 +1,57 @@
+{% extends 'mainpage/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+  Калькулятор
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+
+<br><br>
+               <h1 class="text-center">Расчет затрат на запуск промышленного производства в городе Москве</h1>
+            <div class="card shadow">
+                <div class="container">
+<br>
+                 <form method="POST" action="">
+                            {% csrf_token %}
+      {{ form|crispy }}
+                     <br>
+        <button type="submit" class="btn text-white font-weight-bold" style="background-color:#cc2222">Получить результат</button>
+    </form>
+<br>
+<br>
+</div>
+            </div>
+ <br><br>
+
+
+
+
+
+
+
+        </div>
+        <div class="col-md-1"></div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}

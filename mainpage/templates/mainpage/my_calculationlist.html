@@ -1,0 +1,65 @@
+{% extends 'mainpage/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Редактировать профиль
+{% endblock %}
+
+{% block body %}
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="card shadow">
+                <div class="container"><br>
+<br>
+                                    <h1 class="text-center">Все расчеты</h1>
+<table class="table">
+
+         <thead>
+    <tr>
+      <th scope="col">Номер расчета</th>
+      <th scope="col">Дата</th>
+      <th scope="col">Ссылка</th>
+
+
+    </tr>
+  </thead>
+                      {% for item in object_list %}
+ <tr>
+      <td>{{ item.id }}</td>
+      <td>{{ item.order_create_date }}</td>
+     <td><a href="/calculation/{{ item.id }}"><button class="btn btn-success">Подробности</button> </a></td>
+    </tr>
+
+
+
+
+
+                    {% endfor %}
+
+</table>
+<br>
+<br><br>
+<br>
+
+                </div>
+
+            </div>
+
+<br>
+<br>
+        </div>
+        <div class="col-1"></div>
+
+
+
+    </div>
+
+
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'mainpage/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Редактировать профиль
+{% endblock %}
+
+{% block body %}
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="card shadow">
+                <div class="container"><br>
+<br>
+                                    <h1 class="text-center">Редактировать профиль</h1>
+
+
+    <form method="post">
+        {% csrf_token %}
+
+          {{ profile_form|crispy }}
+        <button class='btn text-white font-weight-bold' style="background-color: #cc2222" type="submit" >Сохранить изменения</button>
+    </form>
+<br>
+<br><br>
+<br>
+
+                </div>
+
+            </div>
+
+<br>
+<br>
+        </div>
+        <div class="col-1"></div>
+
+
+
+    </div>
+
+
+
+
+</div>
+
+{% endblock %}

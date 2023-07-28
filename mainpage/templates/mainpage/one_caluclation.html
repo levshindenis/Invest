@@ -1,0 +1,95 @@
+{% extends 'mainpage/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Редактировать профиль
+{% endblock %}
+
+{% block body %}
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="card shadow">
+                <div class="container"><br>
+<br>
+                                    <h1 class="text-center">Расчет {{ object.id }}</h1>
+                  <a href="/media/{{ object.excel_link }}"> <button class="btn btn-info">Скачать финмодель</button></a>
+                    <a href="/media/pdf/{{ object.pdf_link }}"> <button class="btn btn-success">Скачать буклет</button></a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Значение</th>
+
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <tr>
+          <td>Номер рассчета</td>
+      <td>{{ object.id }}</td>
+    </tr><tr>
+          <td>Округ</td>
+      <td>{{ object.area_type_id }}</td>
+    </tr>
+     <tr>
+          <td>Дата расчета </td>
+      <td>{{ object.order_create_date|date:"SHORT_DATE_FORMAT" }}</td>
+    </tr>
+  <tr>
+          <td>Площадь производства </td>
+      <td>{{ object.area_yardage }}</td>
+    </tr>
+    <tr>
+          <td>Количество работников </td>
+      <td>{{ object.worker_amount }}</td>
+    </tr>
+    <tr>
+          <td>Организационно-правовая форма </td>
+
+      <td> {{ object.organisation_type_id}}</td>
+
+    </tr>
+    <tr>
+          <td>Отрасль </td>
+      <td>{{ object.industry_type_id }}</td>
+    </tr>
+    <tr>
+          <td>Потребность в газе </td>
+      <td>{{ object.need_gas }}</td>
+    </tr>
+    <tr>
+          <td>Потребность в электричестве </td>
+      <td>{{ object.need_electricity }}</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+<br>
+<br><br>
+<br>
+
+                </div>
+
+            </div>
+
+<br>
+<br>
+        </div>
+        <div class="col-1"></div>
+
+
+
+    </div>
+
+
+
+
+</div>
+
+{% endblock %}
